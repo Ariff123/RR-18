@@ -31,9 +31,9 @@ const ffmpeg = require('fluent-ffmpeg')
 const { removeBackgroundFromImageFile } = require('remove.bg')
 const vcard = 'BEGIN:VCARD\n' 
             + 'VERSION:3.0\n' 
-            + 'FN:Ini Rizki\n' 
+            + 'FN:Ini Ariff\n' 
             + 'ORG: Apa?/Kepo amat ngab;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=6285788555068:+62 857-8855-5068\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=6285376980664:+62 853-7698-0664\n' 
             + 'END:VCARD' 
 prefix = '#'
 blocked = []          
@@ -224,7 +224,7 @@ client.on('group-participants-update', async (anu) => {
 			}
 
 			const botNumber = client.user.jid
-			const ownerNumber = ["6285788555068@s.whatsapp.net"] 
+			const ownerNumber = ["6285376980664@s.whatsapp.net"] 
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
@@ -454,7 +454,7 @@ client.on('group-participants-update', async (anu) => {
                          text: teks1,
                          contextInfo: {mentionedJid: [nomor]},
                      }
-                    client.sendMessage('6285788555068@s.whatsapp.net', options, text, {quoted: mek})
+                    client.sendMessage('6285376980664@s.whatsapp.net', options, text, {quoted: mek})
                     reply('Masalah telah di laporkan ke owner BOT, laporan palsu/main2 tidak akan ditanggapi.')
                     break
                 case 'ssweb':
@@ -853,7 +853,7 @@ client.on('group-participants-update', async (anu) => {
                          text: ress,
                          contextInfo: {mentionedJid: [nomor]},
                      }
-                    client.sendMessage('6285788555068@s.whatsapp.net', options, text, {quoted: mek})
+                    client.sendMessage('6285376980664@s.whatsapp.net', options, text, {quoted: mek})
                     reply('REQUEST ANDA TELAH SAMPAI ke owner BOT, Requests palsu/main2 tidak akan ditanggapi.')
                     break
 			 case 'request1':
@@ -1770,7 +1770,7 @@ To=と`, text, botNumber, cr)
 						reply('Sukses(: ')
 					} else {
 						for (let _ of anu) {
-							sendMess(_.jid, `❮RR-018 BROADCHAST ❯\n\n${body.slice(4)}`)
+							sendMess(_.jid, `❮LYNX-BOT BROADCHAST ❯\n\n${body.slice(4)}`)
 						}
 						reply('Sukses(: ')
 					}
@@ -1814,7 +1814,7 @@ To=と`, text, botNumber, cr)
             case 'owner':
             case 'creator':
                   client.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: mek})
-       client.sendMessage(from, 'Owner RR-018',MessageType.text, { quoted: mek} )
+       client.sendMessage(from, 'Owner LYNX_BOT',MessageType.text, { quoted: mek} )
            break    
            case 'setname':
                 if (!isGroup) return reply(mess.only.group)
@@ -1839,13 +1839,13 @@ To=と`, text, botNumber, cr)
 					if (mentioned.length > 1) {
 						teks = ''
 						for (let _ of mentioned) {
-							teks += `𝘆𝗮𝗵𝗵 𝗷????𝗮𝘁𝗮𝗻 𝗮𝗱𝗺𝗶𝗻 𝗸𝗮𝗺𝘂 𝘀𝘂𝗱𝗮𝗵 𝗱𝗶 𝗰𝗼𝗽𝗼𝘁🏃 :\n`
+							teks += `𝘆𝗮𝗵𝗵 𝗷𝗮𝗯𝗮𝘁𝗮𝗻 𝗮𝗱𝗺𝗶𝗻 𝗸𝗮𝗺𝘂 𝘀𝘂𝗱𝗮𝗵 𝗱𝗶 𝗰𝗼𝗽𝗼𝘁🏃 :\n`
 							teks += `@_.split('@')[0]`
 						}
 						mentions(teks, mentioned, true)
 						client.groupDemoteAdmin(from, mentioned)
 					} else {
-						mentions(`𝘆𝗮??𝗵 @${mentioned[0].split('@')[0]} 𝗷𝗮𝗯𝗮𝘁𝗮𝗻 𝗮𝗱𝗺𝗶𝗻 𝗸𝗮𝗺𝘂 𝘀𝘂𝗱𝗮𝗵 𝗱𝗶 𝗰𝗼𝗽𝗼𝘁🏃`, mentioned, true)
+						mentions(`𝘆𝗮𝗵𝗵 @${mentioned[0].split('@')[0]} 𝗷𝗮𝗯𝗮𝘁𝗮𝗻 𝗮𝗱𝗺𝗶𝗻 𝗸𝗮𝗺𝘂 𝘀𝘂𝗱𝗮𝗵 𝗱𝗶 𝗰𝗼𝗽𝗼𝘁🏃`, mentioned, true)
 						client.groupDemoteAdmin(from, mentioned)
 					}
 					break
